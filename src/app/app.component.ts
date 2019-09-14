@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Mentor-On-Demand';
-  selectedMenuOption = 'Home';
 
-  navigate(option: string) {
-    this.selectedMenuOption = option;
-  }
 }

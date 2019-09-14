@@ -1,6 +1,4 @@
-<app-header (OnSelectingMenuOption)="navigate($event)"></app-header>
-<app-home *ngIf="selectedMenuOption === 'Home'"></app-home>
-<app-login *ngIf="selectedMenuOption === 'Login'"></app-login>
-<app-sign-up *ngIf="selectedMenuOption === 'SignUp'"></app-sign-up>
-<app-about *ngIf="selectedMenuOption === 'About'"></app-about>
-<app-mentor-search *ngIf="selectedMenuOption === 'MentorSearch'"></app-mentor-search>
+<app-header></app-header>
+<div class="container">
+<router-outlet></router-outlet>
+</div>
