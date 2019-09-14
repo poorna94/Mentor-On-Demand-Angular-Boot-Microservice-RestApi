@@ -9,7 +9,7 @@ import {UserService} from "../UserModule/user.service";
   providers:[UserService]
 })
 export class SignUpComponent implements OnInit {
-
+  userEnteredEmail='';
   constructor() { }
 
   ngOnInit() {
