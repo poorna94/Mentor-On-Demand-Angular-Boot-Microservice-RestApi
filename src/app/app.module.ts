@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { MentorSearchComponent } from './mentor-search/mentor-search.component';
 import { MentorDetailComponent } from './mentor-search/mentor-detail/mentor-detail.component';
 import {Router, RouterModule, Routes} from "@angular/router";
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
