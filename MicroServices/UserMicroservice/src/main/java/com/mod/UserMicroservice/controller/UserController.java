@@ -1,5 +1,6 @@
 package com.mod.UserMicroservice.controller;
 
+import java.text.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mod.UserMicroservice.Model.UserModel;
 import com.mod.UserMicroservice.Service.UserServiceInterface;
 
-//@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -21,7 +22,7 @@ public class UserController {
 	UserServiceInterface userServiceInterface;
 	
 	@PostMapping("/addUser")
-	public ResponseEntity<UserModel> addUser(@RequestBody UserModel userData) {
+	public ResponseEntity<UserModel> addUser(@RequestBody UserModel userData) throws ParseException {
 		boolean userExist = userServiceInterface.userAlreadyExist(userData.getUserEmailId());
 		if(userExist) {
 			System.out.println("User already exist");

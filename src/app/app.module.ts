@@ -12,13 +12,19 @@ import { MentorSearchComponent } from './mentor-search/mentor-search.component';
 import { MentorDetailComponent } from './mentor-search/mentor-detail/mentor-detail.component';
 import {Router, RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { MentorSignUpComponent } from './mentor-sign-up/mentor-sign-up.component';
+import { DropDownDirectiveDirective } from './Direcitves/DropDown/drop-down-directive.directive';
+import { MentorLoginComponent } from './mentor-login/mentor-login.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
   { path : 'mentor' , component : MentorSearchComponent},
   { path : 'login' , component : LoginComponent},
+  { path : 'mentorLogin' , component : MentorLoginComponent},
   { path : 'about' , component : AboutComponent},
-  { path : 'signup' , component : SignUpComponent}
+  { path : 'loginSignUp' , component : SignUpComponent},
+  { path : 'mentorSignUp' , component : MentorSignUpComponent}
 ];
 // @ts-ignore
 @NgModule({
@@ -30,13 +36,17 @@ const routes: Routes = [
     SignUpComponent,
     AboutComponent,
     MentorSearchComponent,
-    MentorDetailComponent
+    MentorDetailComponent,
+    MentorSignUpComponent,
+    DropDownDirectiveDirective,
+    MentorLoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

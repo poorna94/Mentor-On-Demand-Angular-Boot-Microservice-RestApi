@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MentorModel} from "../../../shared/Mentor.Model";
+import {MentorModel} from "../../shared/Mentor.Model";
 
 @Component({
   selector: 'app-mentor-search',

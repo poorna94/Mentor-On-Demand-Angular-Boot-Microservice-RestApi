@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.mod.UserMicroservice.Model.UserModel;
 
-@Service
+
 public interface UserServiceInterface {
 	
 	public UserModel saveUser(UserModel userData);

@@ -14,6 +14,7 @@ public class UserService implements UserServiceInterface {
 	
 	@Override
 	public UserModel saveUser(UserModel userData) {
+		userData.setUserStatus(false);
 		return userDao.save(userData);
 	}
 

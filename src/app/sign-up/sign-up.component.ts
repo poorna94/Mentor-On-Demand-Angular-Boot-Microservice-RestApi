@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from "@angular/forms";
-import {UserService} from "../UserModule/user.service";
+import {UserService} from "../serviceModule/UserModule/user.service";
+import {UserConfigService} from "../config/user/user-config.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -10,11 +11,21 @@ import {UserService} from "../UserModule/user.service";
 })
 export class SignUpComponent implements OnInit {
   userEnteredEmail='';
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
 
   onSubmit(f: NgForm) {
+      console.log("submitted successfully");
+      this.userService.createUser(f.value)
+        .subscribe((data)=>{
+            console.log("User created")
+        },(error)=>{
+          console.log("Error in adding user")
+        });
+
   }
+
+
 }

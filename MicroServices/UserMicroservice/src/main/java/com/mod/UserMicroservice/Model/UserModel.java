@@ -1,5 +1,6 @@
 package com.mod.UserMicroservice.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,8 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.beans.factory.annotation.Value;
 
 @Entity
 @Table(name="user_model")
@@ -29,12 +28,18 @@ public class UserModel {
 	@NotNull
 	private String userDob;
 	@NotNull
-	@Value("0")
-	private int userStatus=0;
+	@Column(columnDefinition="tinyint(1) default 1")
+	private boolean userStatus=false;
 	
 	public UserModel() {}
 	public Long getUserId() {
 		return userId;
+	}
+	public boolean isUserStatus() {
+		return userStatus;
+	}
+	public void setUserStatus(boolean userStatus) {
+		this.userStatus = userStatus;
 	}
 	public void setUserId(Long userId) {
 		this.userId = userId;
@@ -69,12 +74,7 @@ public class UserModel {
 	public void setUserDob(String userDob) {
 		this.userDob = userDob;
 	}
-	public int getUserStatus() {
-		return userStatus;
-	}
-	public void setUserStatus(int userStatus) {
-		this.userStatus = userStatus;
-	}
+	
 	@Override
 	public String toString() {
 		return "UserModel [userId=" + userId + ", userName=" + userName + ", userEmailId=" + userEmailId
@@ -83,7 +83,7 @@ public class UserModel {
 	}
 	public UserModel(Long userId, @NotNull String userName, @Email @NotNull String userEmailId,
 			@NotNull String userPassword, @NotNull String userContactNo, @NotNull String userDob,
-			@NotNull int userStatus) {
+			@NotNull Boolean userStatus) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
