@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {MentorModel} from "../../shared/Mentor.Model";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {MentorModel} from "../serviceModule/MentorModule/Mentor.Model";
 
 @Component({
   selector: 'app-mentor-search',
@@ -7,14 +7,13 @@ import {MentorModel} from "../../shared/Mentor.Model";
   styleUrls: ['./mentor-search.component.css']
 })
 export class MentorSearchComponent implements OnInit {
-mentorArray: MentorModel[] = [new MentorModel(1,'deep','Java'),
-                              new MentorModel(2,'Jonty','Jquery'),
-                              new MentorModel(3,'Lavish','JavaScript'),
-                              new MentorModel(4,'karan','Node.js')];
+mentorData:MentorModel;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  selectedMentorDetail(mentorData: MentorModel) {
+    this.mentorData=mentorData;
+  }
 }
