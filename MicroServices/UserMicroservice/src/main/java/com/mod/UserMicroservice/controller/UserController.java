@@ -48,11 +48,5 @@ public class UserController {
 		}
 	}
 	
-	//Getting the list of all the users
-	@GetMapping("allMentors")
-	public ResponseEntity<List<UserModel>> getAllMentors(){
-		return new ResponseEntity<List<UserModel>>(userServiceInterface.getAllUsers(),HttpStatus.OK);
-	}
-	
 	
 }

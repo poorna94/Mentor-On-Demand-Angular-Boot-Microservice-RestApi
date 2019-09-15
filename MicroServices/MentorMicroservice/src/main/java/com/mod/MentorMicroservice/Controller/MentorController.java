@@ -16,7 +16,7 @@ import com.mod.MentorMicroservice.Model.MentorModel;
 import com.mod.MentorMicroservice.Service.MentorServiceInterface;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8001")
+@CrossOrigin(origins ="http://localhost:4200")
 @RequestMapping("/mentor")
 public class MentorController {
 	
@@ -41,7 +41,7 @@ public class MentorController {
 		if(mentor!=null) {
 			return new ResponseEntity<MentorModel>(mentor,HttpStatus.OK);
 		}else {
-			return new ResponseEntity<MentorModel>(mentorData,HttpStatus.CONFLICT);
+			return new ResponseEntity<MentorModel>(mentorData,HttpStatus.NOT_FOUND);
 		}
 	}
 	

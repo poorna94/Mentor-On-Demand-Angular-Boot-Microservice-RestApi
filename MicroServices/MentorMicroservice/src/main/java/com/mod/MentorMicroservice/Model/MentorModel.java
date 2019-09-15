@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="mentor_model")
@@ -12,9 +14,15 @@ public class MentorModel {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long mentorId; String mentorName;
+	private Long mentorId; 
+	@NotNull
+	private String mentorName;
+	@Email
+	@NotNull
 	private String mentorEmail;
+	@NotNull
 	private String mentorPassword;
+	@NotNull
 	private String mentorContactNo;
 	private boolean mentorStatus;
 	

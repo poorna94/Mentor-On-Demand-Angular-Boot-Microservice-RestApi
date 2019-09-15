@@ -17,6 +17,7 @@ import { MentorSignUpComponent } from './mentor-sign-up/mentor-sign-up.component
 import { DropDownDirectiveDirective } from './Direcitves/DropDown/drop-down-directive.directive';
 import { MentorLoginComponent } from './mentor-login/mentor-login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { MentorListComponent } from './mentor-search/mentor-list/mentor-list.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -43,7 +44,8 @@ const routes: Routes = [
     MentorSignUpComponent,
     DropDownDirectiveDirective,
     MentorLoginComponent,
-    UserDashboardComponent
+    UserDashboardComponent,
+    MentorListComponent
   ],
   imports: [
     BrowserModule,
