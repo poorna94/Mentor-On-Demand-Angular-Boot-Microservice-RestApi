@@ -1,5 +1,7 @@
 package com.mod.UserMicroservice.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,6 +31,11 @@ public class UserService implements UserServiceInterface {
 	@Override
 	public UserModel userLogin(String email, String password) {
 		return userDao.findByUserEmailIdAndUserPassword(email, password);
+	}
+
+	@Override
+	public List<UserModel> getAllUsers() {
+		return userDao.findAll();
 	}
 
 }

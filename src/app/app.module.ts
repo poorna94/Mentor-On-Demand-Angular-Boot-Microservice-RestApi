@@ -10,12 +10,13 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { AboutComponent } from './about/about.component';
 import { MentorSearchComponent } from './mentor-search/mentor-search.component';
 import { MentorDetailComponent } from './mentor-search/mentor-detail/mentor-detail.component';
-import {Router, RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {FormsModule} from "@angular/forms";
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import { MentorSignUpComponent } from './mentor-sign-up/mentor-sign-up.component';
 import { DropDownDirectiveDirective } from './Direcitves/DropDown/drop-down-directive.directive';
 import { MentorLoginComponent } from './mentor-login/mentor-login.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -24,7 +25,9 @@ const routes: Routes = [
   { path : 'mentorLogin' , component : MentorLoginComponent},
   { path : 'about' , component : AboutComponent},
   { path : 'loginSignUp' , component : SignUpComponent},
-  { path : 'mentorSignUp' , component : MentorSignUpComponent}
+  { path : 'mentorSignUp' , component : MentorSignUpComponent},
+  { path : 'userpage' , component : UserDashboardComponent}
+
 ];
 // @ts-ignore
 @NgModule({
@@ -39,7 +42,8 @@ const routes: Routes = [
     MentorDetailComponent,
     MentorSignUpComponent,
     DropDownDirectiveDirective,
-    MentorLoginComponent
+    MentorLoginComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

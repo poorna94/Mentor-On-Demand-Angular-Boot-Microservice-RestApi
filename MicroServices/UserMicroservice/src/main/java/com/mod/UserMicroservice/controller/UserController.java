@@ -1,6 +1,8 @@
 package com.mod.UserMicroservice.controller;
 
 import java.text.ParseException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.mod.UserMicroservice.Model.UserModel;
 import com.mod.UserMicroservice.Service.UserServiceInterface;
 
@@ -46,6 +46,12 @@ public class UserController {
 		}else {
 			return new ResponseEntity<UserModel>(userData,HttpStatus.NOT_FOUND);
 		}
+	}
+	
+	//Getting the list of all the users
+	@GetMapping("allMentors")
+	public ResponseEntity<List<UserModel>> getAllMentors(){
+		return new ResponseEntity<List<UserModel>>(userServiceInterface.getAllUsers(),HttpStatus.OK);
 	}
 	
 	

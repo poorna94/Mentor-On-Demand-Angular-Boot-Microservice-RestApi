@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mod</groupId>
-	<artifactId>MentorMicroservice</artifactId>
+	<artifactId>SkillsMicroservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>MentorMicroservice</name>
-	<description>This is the User module of the project Mentor on demand</description>
+	<name>SkillsMicroservice</name>
+	<description>This is the Skills module of the project Mentor on demand</description>
 
 	<properties>
 		<java.version>1.8</java.version>
