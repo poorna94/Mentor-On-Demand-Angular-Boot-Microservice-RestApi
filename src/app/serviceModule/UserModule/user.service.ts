@@ -23,16 +23,21 @@ export class UserService {
     return res || { };
   }
 
+  //Adding a user
   createUser(userData:UserModel):Observable<UserModel>{
-    return this.http.post<UserModel>(this.userConfig.getUserLoginURL(),userData,httpOptions);
+    return this.http.post<UserModel>(this.userConfig.getUserRegistrationURL(),userData,httpOptions);
   }
 
-  loginUser(user):Observable<UserModel>{
+  //Login of user
+  loginUser(user:UserModel):Observable<UserModel>{
+    console.log("Logging the user")
     const loginHeaders = new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded'
     });
+    const body = `/email=${user.userEmailId}&password=${user.userPassword}`;
     // @ts-ignore
-    return this.http.get<UserModel>(this.userConfig.getUserLoginURL(),loginHeaders);
+    return this.http.post<UserModel>(this.userConfig.getUserLoginURL(),user,httpOptions);
+
   }
 }

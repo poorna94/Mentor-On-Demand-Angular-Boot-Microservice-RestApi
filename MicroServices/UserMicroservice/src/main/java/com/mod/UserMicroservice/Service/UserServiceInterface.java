@@ -9,4 +9,5 @@ public interface UserServiceInterface {
 	
 	public UserModel saveUser(UserModel userData);
 	public boolean userAlreadyExist(String userEmail);
+	public UserModel userLogin(String email, String password);
 }

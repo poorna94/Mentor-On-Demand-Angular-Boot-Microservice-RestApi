@@ -13,7 +13,7 @@ export class UserConfigService {
 
   //URL for logging a user
   getUserLoginURL():string{
-    return (this.user_api_url+"/login")
+    return (this.user_api_url+"/login");
   }
   constructor() { }
 }

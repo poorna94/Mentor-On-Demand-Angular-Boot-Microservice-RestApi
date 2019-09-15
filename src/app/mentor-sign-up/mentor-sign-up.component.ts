@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mentor-sign-up.component.css']
 })
 export class MentorSignUpComponent implements OnInit {
+  userEnteredEmail: any;
 
   constructor() { }
 

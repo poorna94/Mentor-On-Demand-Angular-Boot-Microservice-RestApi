@@ -26,4 +26,9 @@ public class UserService implements UserServiceInterface {
 			return false;
 	}
 
+	@Override
+	public UserModel userLogin(String email, String password) {
+		return userDao.findByUserEmailIdAndUserPassword(email, password);
+	}
+
 }

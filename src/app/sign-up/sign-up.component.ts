@@ -17,7 +17,6 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-      console.log("submitted successfully");
       this.userService.createUser(f.value)
         .subscribe((data)=>{
             console.log("User created")

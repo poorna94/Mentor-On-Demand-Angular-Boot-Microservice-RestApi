@@ -9,4 +9,5 @@ import com.mod.UserMicroservice.Model.UserModel;
 public interface UserDaoInterface extends JpaRepository<UserModel, Long> {
 	
 	public UserModel findByUserEmailId(String userEmail);
+	public UserModel findByUserEmailIdAndUserPassword(String email,String password);
 }
