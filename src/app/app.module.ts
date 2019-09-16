@@ -21,6 +21,11 @@ import { MentorListComponent } from './mentor-search/mentor-list/mentor-list.com
 import { MentorItemComponent } from './mentor-search/mentor-list/mentor-item/mentor-item.component';
 import { MentorDashboardComponent } from './mentor-dashboard/mentor-dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { MentorSkillComponent } from './mentor-dashboard/mentor-skill/mentor-skill.component';
+import { NewSkillComponent } from './mentor-dashboard/mentor-skill/new-skill/new-skill.component';
+import { ExistingSkillComponent } from './mentor-dashboard/mentor-skill/existing-skill/existing-skill.component';
+import { UserProposalComponent } from './mentor-dashboard/user-proposal/user-proposal.component';
+import { PaymentComponent } from './mentor-dashboard/payment/payment.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -31,7 +36,10 @@ const routes: Routes = [
   { path : 'userSignUp' , component : SignUpComponent},
   { path : 'mentorSignUp' , component : MentorSignUpComponent},
   { path : 'userpage' , component : UserDashboardComponent},
-  { path : 'mentorpage' , component :MentorDashboardComponent}
+  { path : 'mentorpage' , component :MentorDashboardComponent},
+  { path : 'skills' , component : MentorSkillComponent},
+  { path : 'students' , component : UserProposalComponent},
+  { path : 'payments' , component : PaymentComponent}
 
 ];
 // @ts-ignore
@@ -52,7 +60,12 @@ const routes: Routes = [
     MentorListComponent,
     MentorItemComponent,
     MentorDashboardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    MentorSkillComponent,
+    NewSkillComponent,
+    ExistingSkillComponent,
+    UserProposalComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

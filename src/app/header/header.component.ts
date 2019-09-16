@@ -7,9 +7,9 @@ import {MentorService} from "../serviceModule/MentorModule/mentor.service";
   styleUrls: ['./header.component.css']
 })
 
-export class HeaderComponent implements OnInit {
-  isUserLoggedIn:string;
-  isMentorLoggedIn:string;
+export class HeaderComponent implements OnInit, OnChanges {
+  isUserLoggedIn:string = "no";
+  isMentorLoggedIn:string = "no";
 
 
   constructor() { }
@@ -17,7 +17,16 @@ export class HeaderComponent implements OnInit {
   @Output() OnSelectingMenuOption = new EventEmitter<string>();
   ngOnInit() {
     this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
-    console.log("again running")
+    this.isMentorLoggedIn = localStorage.getItem('isMentorLoggedIn');
+    console.log("again running");
+    console.log(this.isUserLoggedIn+this.isMentorLoggedIn);
+  }
+
+  ngOnChanges(){
+    this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+    this.isMentorLoggedIn = localStorage.getItem('isMentorLoggedIn');
+    console.log("changes inside running");
+    console.log(this.isUserLoggedIn+this.isMentorLoggedIn);
   }
 
   selectedMenuOption(option:string) {

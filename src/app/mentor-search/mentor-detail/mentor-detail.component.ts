@@ -15,4 +15,7 @@ export class MentorDetailComponent implements OnInit {
     this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
   }
 
+  proposeMentor() {
+    
+  }
 }

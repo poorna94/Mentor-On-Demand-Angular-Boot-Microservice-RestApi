@@ -2,7 +2,6 @@ package com.mod.SkillsMicroservice.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.mod.SkillsMicroservice.Dao.SkillsDaoInterface;
 import com.mod.SkillsMicroservice.Model.SkillsModel;
 
