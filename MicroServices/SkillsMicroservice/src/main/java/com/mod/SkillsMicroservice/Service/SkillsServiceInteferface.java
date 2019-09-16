@@ -1,5 +1,8 @@
 package com.mod.SkillsMicroservice.Service;
 
-public interface SkillsServiceInteferface {
+import com.mod.SkillsMicroservice.Model.SkillsModel;
 
+public interface SkillsServiceInteferface {
+	
+	public SkillsModel saveSkill(SkillsModel skilldata);
 }

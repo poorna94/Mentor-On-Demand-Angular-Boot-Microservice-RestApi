@@ -19,6 +19,8 @@ import { MentorLoginComponent } from './mentor-login/mentor-login.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { MentorListComponent } from './mentor-search/mentor-list/mentor-list.component';
 import { MentorItemComponent } from './mentor-search/mentor-list/mentor-item/mentor-item.component';
+import { MentorDashboardComponent } from './mentor-dashboard/mentor-dashboard.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -28,7 +30,8 @@ const routes: Routes = [
   { path : 'about' , component : AboutComponent},
   { path : 'userSignUp' , component : SignUpComponent},
   { path : 'mentorSignUp' , component : MentorSignUpComponent},
-  { path : 'userpage' , component : UserDashboardComponent}
+  { path : 'userpage' , component : UserDashboardComponent},
+  { path : 'mentorpage' , component :MentorDashboardComponent}
 
 ];
 // @ts-ignore
@@ -47,7 +50,9 @@ const routes: Routes = [
     MentorLoginComponent,
     UserDashboardComponent,
     MentorListComponent,
-    MentorItemComponent
+    MentorItemComponent,
+    MentorDashboardComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.mod.UserMicroservice.Model.UserModel;
 import com.mod.UserMicroservice.Service.UserServiceInterface;
@@ -39,13 +41,17 @@ public class UserController {
 	//Logging in new user
 	@PostMapping("/login")
 	public ResponseEntity<UserModel> loginUser(@RequestBody UserModel user){
-		System.out.println(user.getUserEmailId());
 		UserModel userData = userServiceInterface.userLogin(user.getUserEmailId(), user.getUserPassword());
 		if(userData!=null){
 			return new ResponseEntity<UserModel>(userData,HttpStatus.ACCEPTED);
 		}else {
 			return new ResponseEntity<UserModel>(userData,HttpStatus.NOT_FOUND);
 		}
+	}
+	
+	@PatchMapping("/updatePassword")
+	public ResponseEntity<UserModel> updatePassword(@RequestBody UserModel userData){
+		return new ResponseEntity<UserModel>(userServiceInterface.saveUser(userData), HttpStatus.OK);
 	}
 	
 	

@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import {MentorModel} from "../serviceModule/MentorModule/Mentor.Model";
 import {MentorService} from "../serviceModule/MentorModule/mentor.service";
 import {Router} from "@angular/router";
+import {HeaderComponent} from "../header/header.component";
 
 @Component({
   selector: 'app-mentor-login',
@@ -22,10 +23,12 @@ export class MentorLoginComponent implements OnInit {
 
   onSubmit(mentorLoginForm: NgForm) {
       this.mentorService.getMentorLogin(mentorLoginForm.value)
-        .subscribe(()=>{
+        .subscribe((data)=>{
             localStorage.setItem('isMentorLoggedIn','true');
             console.log("Mentor logged in");
-            this.router.navigate(['Mentor Dashboard']);
+            localStorage.setItem('MentorLoggedIn',JSON.stringify(data));
+            this.router.navigate(['mentorpage']);
+
         },()=>{
             console.log("No mentor found");
         })
