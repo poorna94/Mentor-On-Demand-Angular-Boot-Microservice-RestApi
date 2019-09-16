@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MentorModel} from "../serviceModule/MentorModule/Mentor.Model";
 import {MentorService} from "../serviceModule/MentorModule/mentor.service";
-import {error} from "util";
 
 @Component({
   selector: 'app-mentor-search',
@@ -12,8 +11,6 @@ import {error} from "util";
 //allMentor - > mentor array
 export class MentorSearchComponent implements OnInit {
 mentorData:MentorModel;
-
-
   constructor(private mentorService:MentorService) { }
 
   ngOnInit() {
