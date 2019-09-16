@@ -25,6 +25,54 @@ public class SkillsModel {
 	@NotBlank
 	private int skillDuration;
 	
+	private boolean videoMaterial;
+	
+	private boolean notesMaterial;
+	
+	private boolean liveVideos;
+	
+	private boolean doubtSession;
+
+	public int getSkillDuration() {
+		return skillDuration;
+	}
+
+	public void setSkillDuration(int skillDuration) {
+		this.skillDuration = skillDuration;
+	}
+
+	public boolean isVideoMaterial() {
+		return videoMaterial;
+	}
+
+	public void setVideoMaterial(boolean videoMaterial) {
+		this.videoMaterial = videoMaterial;
+	}
+
+	public boolean isNotesMaterial() {
+		return notesMaterial;
+	}
+
+	public void setNotesMaterial(boolean notesMaterial) {
+		this.notesMaterial = notesMaterial;
+	}
+
+	public boolean isLiveVideos() {
+		return liveVideos;
+	}
+
+	public void setLiveVideos(boolean liveVideos) {
+		this.liveVideos = liveVideos;
+	}
+
+	public boolean isDoubtSession() {
+		return doubtSession;
+	}
+
+	public void setDoubtSession(boolean doubtSession) {
+		this.doubtSession = doubtSession;
+	}
+
 	public Long getSkillId() {
 		return skillId;
 	}
@@ -51,14 +99,22 @@ public class SkillsModel {
 
 	@Override
 	public String toString() {
-		return "SkillsModel [skillId=" + skillId + ", mentorId=" + mentorId + ", skillName=" + skillName + "]";
+		return "SkillsModel [skillId=" + skillId + ", mentorId=" + mentorId + ", skillName=" + skillName
+				+ ", skillDuration=" + skillDuration + ", videoMaterial=" + videoMaterial + ", notesMaterial="
+				+ notesMaterial + ", liveVideos=" + liveVideos + ", doubtSession=" + doubtSession + "]";
 	}
 
-	public SkillsModel(Long skillId, @NotBlank Long mentorId, @NotNull String skillName) {
+	public SkillsModel(Long skillId, @NotBlank Long mentorId, @NotNull String skillName, @NotBlank int skillDuration,
+			boolean videoMaterial, boolean notesMaterial, boolean liveVideos, boolean doubtSession) {
 		super();
 		this.skillId = skillId;
 		this.mentorId = mentorId;
 		this.skillName = skillName;
+		this.skillDuration = skillDuration;
+		this.videoMaterial = videoMaterial;
+		this.notesMaterial = notesMaterial;
+		this.liveVideos = liveVideos;
+		this.doubtSession = doubtSession;
 	}
 	
 	public SkillsModel() {}
