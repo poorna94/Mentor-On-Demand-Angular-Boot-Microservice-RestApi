@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MentorModel} from "../../serviceModule/MentorModule/Mentor.Model";
+import {isBoolean} from "util";
 
 @Component({
   selector: 'app-mentor-detail',
@@ -9,8 +10,9 @@ import {MentorModel} from "../../serviceModule/MentorModule/Mentor.Model";
 export class MentorDetailComponent implements OnInit {
 @Input() mentorData:MentorModel;
   constructor() { }
-
+  isUserLoggedIn:string;
   ngOnInit() {
+    this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
   }
 
 }

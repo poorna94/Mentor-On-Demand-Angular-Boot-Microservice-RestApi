@@ -1,9 +1,10 @@
 export class MentorModel {
-  constructor( private Id:number,
-               private Name:string,
-               private Skill:string,
-               private TotalStudents: number,
-               private Ratings:number){
+  constructor( private mentorId:number,
+               private mentorName:string,
+               private mentorEmail: string,
+               private mentorContactNo:string,
+               private mentorExperience:number,
+               private mentorPassword:string){
 
   }
 }

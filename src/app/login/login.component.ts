@@ -10,9 +10,6 @@ import {ActivatedRoute, Router, Routes} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private loggerInUser:UserModel;
-  private isUserLoggedIn:boolean = false;
-
 
   constructor(private userService :UserService,
               private router : Router) { }
@@ -23,11 +20,9 @@ export class LoginComponent implements OnInit {
   onSubmit(userLoginForm: NgForm) {
         this.userService.loginUser(userLoginForm.value)
           .subscribe((data)=>{
-              this.loggerInUser = data;
-              this.isUserLoggedIn=true;
-              console.log(this.loggerInUser.userName);
-              this.router.navigate(["userpage"])
-                .then(r => console.log("Towards user page"));
+              localStorage.setItem('isUserLoggedIn','true');
+              localStorage.setItem('userLoggedIn',JSON.stringify(data));
+              this.router.navigate(["login"])
           },
             (error)=> {
               console.log(error)

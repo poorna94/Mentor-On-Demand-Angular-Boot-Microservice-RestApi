@@ -4,7 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
 import {UserConfigService} from "../../config/user/user-config.service";
-import {Routes} from "@angular/router";
+import {Router, Routes} from "@angular/router";
 
 const httpOptions={
   headers: new HttpHeaders({
@@ -17,7 +17,8 @@ const httpOptions={
 })
 export class UserService {
   constructor( private  http : HttpClient,
-               private userConfig : UserConfigService) { }
+               private userConfig : UserConfigService,
+               private router :Router) { }
 
 
   private static extractData(res: Response){

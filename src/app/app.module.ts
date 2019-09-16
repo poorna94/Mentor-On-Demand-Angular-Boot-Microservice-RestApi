@@ -26,7 +26,7 @@ const routes: Routes = [
   { path : 'login' , component : LoginComponent},
   { path : 'mentorLogin' , component : MentorLoginComponent},
   { path : 'about' , component : AboutComponent},
-  { path : 'loginSignUp' , component : SignUpComponent},
+  { path : 'userSignUp' , component : SignUpComponent},
   { path : 'mentorSignUp' , component : MentorSignUpComponent},
   { path : 'userpage' , component : UserDashboardComponent}
 

@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {MentorService} from "../serviceModule/MentorModule/mentor.service";
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  isUserLoggedIn:string;
+  isMentorLoggedIn:string;
+
+
   constructor() { }
 
   @Output() OnSelectingMenuOption = new EventEmitter<string>();
   ngOnInit() {
+    this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
   }
 
   selectedMenuOption(option:string) {

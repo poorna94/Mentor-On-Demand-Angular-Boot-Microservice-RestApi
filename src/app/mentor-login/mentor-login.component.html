@@ -1,17 +1,21 @@
 <div class="login-form">
-  <form>
+  <form (ngSubmit)=onSubmit(mentorLoginForm) #mentorLoginForm="ngForm">
     <div class="avatar">
-      <i class="fa fa-graduation-cap fa-4x" aria-hidden="true" style="margin: 6px 0px 0px -1px"></i>
+      <i class="fa fa-user fa-5x" aria-hidden="true"></i>
     </div>
     <h2 class="text-center">Mentor Login</h2>
     <div class="form-group">
-      <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+      <input type="text" class="form-control" name="mentorEmail" placeholder="Mentor Email"
+             ngModel required email #emailLogin=ngModel>
+      <span *ngIf="!emailLogin.valid && emailLogin.touched">Please enter a valid email</span>
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+      <input type="password" class="form-control" name="mentorPassword" placeholder="Password"
+             ngModel required #mentorPassword=ngModel>
+      <span *ngIf="mentorPassword.touched && !mentorPassword.dirty">Please enter the password</span>
     </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!userLoginForm.valid">Sign In</button>
     </div>
     <div class="clearfix">
       <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>

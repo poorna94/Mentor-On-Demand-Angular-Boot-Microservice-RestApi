@@ -45,7 +45,7 @@ public class MentorController {
 		}
 	}
 	
-	@GetMapping("allMentors")
+	@GetMapping("/mentors")
 	public ResponseEntity<List<MentorModel>> getAllMentors(){
 		return new ResponseEntity<List<MentorModel>>(mentorService.getAllMentors(),HttpStatus.OK);
 	}

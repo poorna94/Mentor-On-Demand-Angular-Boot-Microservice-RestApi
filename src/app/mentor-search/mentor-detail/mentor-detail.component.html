@@ -1,25 +1,16 @@
 <div class="row">
-    <div>
-      <table class="table">
-        <tbody>
-        <tr>
-          <th>Row</th>
-          <td>{{mentorData.Name}}</td>
-        </tr>
-        <tr>
-          <th>Skills</th>
-          <td>John</td>
-        </tr>
-        <tr>
-          <th>Total student</th>
-          <td>John</td>
-        </tr>
-        <tr>
-          <th>Rating</th>
-          <td>{{mentorData.Ratings}}</td>
-        </tr>
+  <div class="panel panel-primary clearfix">
 
-        </tbody>
-      </table>
+    <div class="row" *ngIf="isUserLoggedIn">
+      <div class="col-xs-12">
+
+      </div>
     </div>
+    <div class="panel-heading clearfix"><strong>Name: </strong>{{mentorData.mentorName}} <button class="btn btn-success pull-right " type="button" (click)="addIngredients()">Propose Mentor</button></div>
+    <div class="panel-body"><strong>Experience: </strong>{{mentorData.mentorExperience}} yr</div>
+    <div class="panel-body"><strong>Skills: </strong>{{'Java, Python, R, ML'}}</div>
+    <div class="panel-body"><strong>Email: </strong>{{mentorData.mentorEmail}}</div>
+    <div class="panel-body"><strong>Ratings: </strong>{{'********'}}</div>
+    <div></div>
+  </div>
 </div>

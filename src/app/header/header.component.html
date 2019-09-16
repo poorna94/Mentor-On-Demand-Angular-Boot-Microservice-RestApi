@@ -3,10 +3,13 @@
     <div class="navbar-header">
       <div class="navbar-brand"><a href="#">Mentor On Demand</a></div>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse" *ngIf="">
         <ul class="nav navbar-nav navbar-right">
           <li [routerLinkActive]="'/'"
               [routerLinkActiveOptions]="{exact: true}"><a routerLink="/" >Home</a></li>
+          <li [routerLinkActive]="'/mentor'"
+              [routerLinkActiveOptions]="{exact: true}"><a routerLink="/mentor">Mentors</a></li>
+          <li>
           <li [routerLinkActive]="'/mentor'"
               [routerLinkActiveOptions]="{exact: true}"><a routerLink="/mentor">Mentors</a></li>
           <li>
@@ -25,7 +28,7 @@
               <li class="dropdown" appDropDownDirective>
                 <a class="dropdown-toggle" role="button" >SignUp<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a routerLink="/loginSignUp">User SignUp</a></li>
+                  <li><a routerLink="/userSignUp">User SignUp</a></li>
                   <li><a routerLink="/mentorSignUp">Mentor SignUp</a></li>
                 </ul>
               </li>

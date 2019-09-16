@@ -24,9 +24,17 @@ public class MentorModel {
 	private String mentorPassword;
 	@NotNull
 	private String mentorContactNo;
+	@NotNull
+	private Integer mentorExperience;
+	
 	private boolean mentorStatus;
 	
-
+	public Integer getMentorExperience() {
+		return mentorExperience;
+	}
+	public void setMentorExperience(Integer mentorExperience) {
+		this.mentorExperience = mentorExperience;
+	}
 	public Long getMentorId() {
 		return mentorId;
 	}
@@ -63,23 +71,26 @@ public class MentorModel {
 	public void setMentorStatus(boolean mentorStatus) {
 		this.mentorStatus = mentorStatus;
 	}
-	@Override
-	public String toString() {
-		return "MentorModel [mentorId=" + mentorId + ", mentorName=" + mentorName + ", mentorEmail=" + mentorEmail
-				+ ", mentorPassword=" + mentorPassword + ", mentorContactNo=" + mentorContactNo + ", mentorStatus="
-				+ mentorStatus + "]";
-	}
-	public MentorModel(Long mentorId, String mentorName, String mentorEmail, String mentorPassword,
-			String mentorContactNo, boolean mentorStatus) {
+
+	
+	public MentorModel(Long mentorId, @NotNull String mentorName, @Email @NotNull String mentorEmail,
+			@NotNull String mentorPassword, @NotNull String mentorContactNo, @NotNull Integer mentorExperience,
+			boolean mentorStatus) {
 		super();
 		this.mentorId = mentorId;
 		this.mentorName = mentorName;
 		this.mentorEmail = mentorEmail;
 		this.mentorPassword = mentorPassword;
 		this.mentorContactNo = mentorContactNo;
+		this.mentorExperience = mentorExperience;
 		this.mentorStatus = mentorStatus;
 	}
-	
+	@Override
+	public String toString() {
+		return "MentorModel [mentorId=" + mentorId + ", mentorName=" + mentorName + ", mentorEmail=" + mentorEmail
+				+ ", mentorPassword=" + mentorPassword + ", mentorContactNo=" + mentorContactNo + ", mentorExperience="
+				+ mentorExperience + ", mentorStatus=" + mentorStatus + "]";
+	}
 	public MentorModel() {}
 	
 	
