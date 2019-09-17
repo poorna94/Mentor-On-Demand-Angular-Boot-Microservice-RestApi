@@ -1,13 +1,8 @@
 <div class="row">
   <div class="panel panel-primary clearfix">
-
-    <div class="row" *ngIf="isUserLoggedIn">
-      <div class="col-xs-12">
-
-      </div>
-    </div>
     <div class="panel-heading clearfix"><strong>Name: </strong>{{mentorData.mentorName}}
-      <button class="btn btn-success pull-right " type="button" (click)="proposeMentor()">Propose Mentor</button></div>
+      <button class="btn btn-success pull-right " type="button"
+              (click)="proposeMentor(mentorData.mentorId)" *ngIf="isUserLoggedIn=='true'">Propose Mentor</button></div>
     <div class="panel-body"><strong>Experience: </strong>{{mentorData.mentorExperience}} yr</div>
     <div class="panel-body"><strong>Skills: </strong>{{'Java, Python, R, ML'}}</div>
     <div class="panel-body"><strong>Email: </strong>{{mentorData.mentorEmail}}</div>

@@ -37,7 +37,7 @@ public class MentorController {
 	}
 	
 	//authenticating a user
-	@PostMapping("/authenticateUser")
+	@PostMapping("/login")
 	public ResponseEntity<MentorModel> authenticateMentor(@RequestBody MentorModel mentorData) {
 		MentorModel mentor = mentorService.mentorAuthenticate(mentorData.getMentorEmail(), mentorData.getMentorPassword());
 		if(mentor!=null) {

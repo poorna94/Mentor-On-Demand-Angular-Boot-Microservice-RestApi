@@ -8,16 +8,27 @@ import {MentorService} from "../serviceModule/MentorModule/mentor.service";
 })
 
 export class HeaderComponent implements OnInit, OnChanges {
-  isUserLoggedIn:string = "no";
-  isMentorLoggedIn:string = "no";
+  isUserLoggedIn:string = "false";
+  isMentorLoggedIn:string = "false";
 
 
-  constructor() { }
+  constructor() {
+
+  }
 
   @Output() OnSelectingMenuOption = new EventEmitter<string>();
   ngOnInit() {
-    this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
-    this.isMentorLoggedIn = localStorage.getItem('isMentorLoggedIn');
+    if(localStorage.getItem('isUserLoggedIn')===null)
+    {
+      this.isUserLoggedIn='false';
+    }else{
+      this.isUserLoggedIn=localStorage.getItem('isUserLoggedIn');
+    }
+    if(localStorage.getItem('isMentorLoggedIn')===null){
+      this.isMentorLoggedIn='true';
+    }else{
+      this.isMentorLoggedIn=localStorage.getItem('isMentorLoggedIn');
+    }
     console.log("again running");
     console.log(this.isUserLoggedIn+this.isMentorLoggedIn);
   }
@@ -36,5 +47,10 @@ export class HeaderComponent implements OnInit, OnChanges {
   getUserLogOut() {
     localStorage.removeItem('isUserLoggedIn');
     localStorage.setItem('isUserLoggedIn','false');
+  }
+
+  getMentorLogOut(){
+    localStorage.removeItem('isMentorLoggedIn');
+    localStorage.setItem('isMentorLoggedIn','false');
   }
 }

@@ -7,5 +7,6 @@ import com.mod.SkillsMicroservice.Model.SkillsModel;
 
 @Repository
 public interface SkillsDaoInterface extends JpaRepository<SkillsModel, Long> {
-
+	
+	public SkillsModel findByMentorId(Long id);
 }

@@ -16,4 +16,9 @@ public class SkillsServiceImplementation implements SkillsServiceInteferface{
 		return skillDao.save(skilldata);
 	}
 
+	@Override
+	public SkillsModel getMentorSkills(Long id) {
+		return skillDao.findByMentorId(id);
+	}
+
 }

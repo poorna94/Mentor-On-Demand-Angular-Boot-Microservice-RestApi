@@ -16,13 +16,12 @@ public class SkillsModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long skillId;
 	
-	@NotBlank
+	@NotNull
 	private Long mentorId;
 	
 	@NotNull
 	private String skillName;
 
-	@NotBlank
 	private int skillDuration;
 	
 	private boolean videoMaterial;
@@ -104,7 +103,7 @@ public class SkillsModel {
 				+ notesMaterial + ", liveVideos=" + liveVideos + ", doubtSession=" + doubtSession + "]";
 	}
 
-	public SkillsModel(Long skillId, @NotBlank Long mentorId, @NotNull String skillName, @NotBlank int skillDuration,
+	public SkillsModel(Long skillId, @NotBlank Long mentorId, @NotNull String skillName, int skillDuration,
 			boolean videoMaterial, boolean notesMaterial, boolean liveVideos, boolean doubtSession) {
 		super();
 		this.skillId = skillId;
@@ -117,6 +116,8 @@ public class SkillsModel {
 		this.doubtSession = doubtSession;
 	}
 	
-	public SkillsModel() {}
+    public SkillsModel() {
+		// TODO Auto-generated constructor stub
+	}
 	
 }

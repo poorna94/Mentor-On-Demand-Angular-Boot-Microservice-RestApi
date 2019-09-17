@@ -18,8 +18,8 @@ export class MentorConfigService {
   }
 
   //Getting mentor logged in
-  getMentorLogIn():string{
-    return this.API_URL+"/login";
+  getMentorLogIn_API_URL():string{
+    return (this.API_URL+"/login");
   }
   constructor() { }
 }

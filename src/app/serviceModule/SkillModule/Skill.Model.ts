@@ -1,10 +1,10 @@
 export class SkillModel {
-constructor(private skillId:number,
-            private mentorId:number,
-            private skillName:string,
-            private skillDuration:number,
-            private videoMaterial:boolean,
-            private notesMaterial:boolean,
-            private liveVideos:boolean,
-            private doubtSession:boolean){}
+constructor(public skillId:number,
+            public mentorId:number,
+            public skillName:string,
+            public skillDuration:number,
+            public videoMaterial:boolean,
+            public notesMaterial:boolean,
+            public liveVideos:boolean,
+            public doubtSession:boolean){}
 }

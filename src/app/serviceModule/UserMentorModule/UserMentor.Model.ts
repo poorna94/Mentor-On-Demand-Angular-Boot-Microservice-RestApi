@@ -1,11 +1,11 @@
 export class UserMentorModel {
-  constructor(private userId:number,
-              private mentorId:number,
-              private  skillId:number,
-              private userProposal:boolean,
-              private mentorProposal:boolean,
-              private userReconfirmProposal:boolean,
-              private  userRating:boolean,
-              private userProgress:number,
-              private feedback:string){}
+  constructor(public userId:number,
+              public mentorId:number,
+              public  skillId:number,
+              public userProposal:boolean,
+              public mentorProposal:boolean,
+              public userReconfirmProposal:boolean,
+              public  userRating:boolean,
+              public userProgress:number,
+              public feedback:string){}
 }

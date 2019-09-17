@@ -13,9 +13,10 @@ export class MentorDetailComponent implements OnInit {
   isUserLoggedIn:string;
   ngOnInit() {
     this.isUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+    console.log("Check"+this.isUserLoggedIn)
   }
 
-  proposeMentor() {
-    
+  proposeMentor(mentorId: number) {
+
   }
 }

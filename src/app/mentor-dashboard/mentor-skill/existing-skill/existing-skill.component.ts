@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SkillModel} from "../../../serviceModule/SkillModule/Skill.Model";
 
 @Component({
   selector: 'app-existing-skill',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./existing-skill.component.css']
 })
 export class ExistingSkillComponent implements OnInit {
-
+  @Input() mentorSkillList:SkillModel[];
   constructor() { }
 
   ngOnInit() {
