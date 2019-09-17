@@ -27,9 +27,6 @@ import { ExistingSkillComponent } from './mentor-dashboard/mentor-skill/existing
 import { UserProposalComponent } from './mentor-dashboard/user-proposal/user-proposal.component';
 import { PaymentComponent } from './mentor-dashboard/payment/payment.component';
 import { MentorConnectionComponent } from './user-dashboard/mentor-connection/mentor-connection.component';
-import { MentorConnectionStatusComponent } from './user-dashboard/mentor-connection/mentor-connection-status/mentor-connection-status.component';
-import { RequestedMentorListComponent } from './user-dashboard/mentor-connection/requested-mentor-list/requested-mentor-list.component';
-import { RequestedMentorListItemComponent } from './user-dashboard/mentor-connection/requested-mentor-list/requested-mentor-list-item/requested-mentor-list-item.component';
 
 const routes: Routes = [
   { path : '' , component : HomeComponent},
@@ -71,10 +68,7 @@ const routes: Routes = [
     ExistingSkillComponent,
     UserProposalComponent,
     PaymentComponent,
-    MentorConnectionComponent,
-    MentorConnectionStatusComponent,
-    RequestedMentorListComponent,
-    RequestedMentorListItemComponent
+    MentorConnectionComponent
   ],
   imports: [
     BrowserModule,

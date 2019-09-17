@@ -1,5 +1,7 @@
 package com.mod.UserMentorMicroservice.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,13 +32,25 @@ public class UserMentorController {
 		else
 		return new ResponseEntity<UserMentorModel>(savedRelationship,HttpStatus.CONFLICT);
 	}
-	
-	@GetMapping("/userData/:id")
-	public ResponseEntity<UserMentorModel> getUserConnection(@PathVariable Long id){
-		UserMentorModel userConnection = userMentorInterface.getUserConnection(id);
+
+	@GetMapping("/userData/{id}")
+	public ResponseEntity<List<UserMentorModel>> getUserConnection(@PathVariable("id") Long id){
+		List<UserMentorModel> userConnection = userMentorInterface.getUserConnection(id);
 		if(userConnection!=null)
-			return new ResponseEntity<UserMentorModel>(userConnection,HttpStatus.OK);
+			return new ResponseEntity<List<UserMentorModel>>(userConnection,HttpStatus.OK);
 		else
-			return new ResponseEntity<UserMentorModel>(userConnection,HttpStatus.CONFLICT);
+			return new ResponseEntity<List<UserMentorModel>>(userConnection,HttpStatus.CONFLICT);
 	}
+	
+	/*
+	 * @GetMapping("mentorData/:id") public ResponseEntity<List<Object>>
+	 * getMentorConnection(@PathVariable Long id){ List<UserMentorModel>
+	 * mentorConnection = userMentorInterface.getUserConnection(id);
+	 * if(mentorConnection!=null) return new
+	 * ResponseEntity<List<UserMentorModel>>(mentorConnection,HttpStatus.OK); else
+	 * return new
+	 * ResponseEntity<List<UserMentorModel>>(mentorConnection,HttpStatus.CONFLICT);
+	 * 
+	 * }
+	 */
 }

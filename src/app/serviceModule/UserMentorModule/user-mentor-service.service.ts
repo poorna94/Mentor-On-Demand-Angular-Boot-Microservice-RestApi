@@ -9,12 +9,14 @@ import {Observable} from "rxjs";
 })
 export class UserMentorServiceService {
   constructor(private http:HttpClient,
-              private userMentorConfig:UserMentorConfigService)
-  { }
-
+              private userMentorConfig:UserMentorConfigService) {}
   // @ts-ignore
   getProposalByStudentSent(proposalByStudent:UserMentorModel):Observable<UserMentorModel>{
     return this.http.post<UserMentorModel>(this.userMentorConfig.getProposalByStudentSaved_URL(),proposalByStudent);
+  }
+
+  getMentorByUser(uId:number):Observable<UserMentorModel[]>{
+    return this.http.get<UserMentorModel[]>((this.userMentorConfig.getUserConnection_URL()+`${uId}`));
   }
 
 

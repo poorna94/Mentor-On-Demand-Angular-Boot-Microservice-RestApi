@@ -10,4 +10,5 @@ public interface MentorServiceInterface {
 	public boolean isMentorAlreadyExist(String email);
 	public MentorModel mentorAuthenticate(String email, String password);
 	public List<MentorModel> getAllMentors();
+	public MentorModel getMentorById(Long uId);
 }

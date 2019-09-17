@@ -35,4 +35,8 @@ public class MentorServiceImplementation implements MentorServiceInterface {
 		return mentorDao.findAll();
 	}
 
+	public MentorModel getMentorById(Long uId) {
+		return mentorDao.findByMentorId(uId);
+	}
+
 }

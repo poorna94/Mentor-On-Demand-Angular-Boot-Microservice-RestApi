@@ -25,4 +25,8 @@ export class MentorService {
     // @ts-ignore
     return this.http.post<MentorModel>(this.mentorConfig.getMentorRegistered_API_URL(),mentorData).pipe();
   }
+
+  getMentorByUserConnection(mentorIdArray:number[]):Observable<MentorModel[]>{
+    return this.http.post(this)
+  }
 }

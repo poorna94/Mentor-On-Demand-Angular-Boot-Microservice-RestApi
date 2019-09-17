@@ -10,5 +10,13 @@ export class UserMentorConfigService {
   getProposalByStudentSaved_URL():string{
     return (this.API_URL+"/add");
   }
+
+  getUserConnection_URL():string{
+    return (this.API_URL+"/userData/");
+  }
+
+  getMentorConnection_URL():string{
+    return (this.API_URL+"/mentorData/");
+  }
   constructor() { }
 }

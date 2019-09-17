@@ -10,4 +10,5 @@ public interface MentorDaoInterface extends JpaRepository<MentorModel, Long> {
 		
 	public MentorModel findByMentorEmail(String email);
 	public MentorModel findByMentorEmailAndMentorPassword(String email,String password);
+	public MentorModel findByMentorId(Long uId);
 }
