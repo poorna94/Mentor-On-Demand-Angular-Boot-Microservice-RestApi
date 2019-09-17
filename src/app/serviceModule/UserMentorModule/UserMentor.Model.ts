@@ -5,7 +5,7 @@ export class UserMentorModel {
               public userProposal:boolean,
               public mentorProposal:boolean,
               public userReconfirmProposal:boolean,
-              public  userRating:boolean,
+              public  userRating:number,
               public userProgress:number,
               public feedback:string){}
 }

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
         this.userService.loginUser(userLoginForm.value)
           .subscribe((data)=>{
               localStorage.setItem('isUserLoggedIn','true');
-              localStorage.setItem('userLoggedIn',JSON.stringify(data));
+              localStorage.setItem('UserLoggedIn',JSON.stringify(data));
               this.router.navigate(['userpage']).then(()=>{
                 console.log("Navigated to user home page")
               });

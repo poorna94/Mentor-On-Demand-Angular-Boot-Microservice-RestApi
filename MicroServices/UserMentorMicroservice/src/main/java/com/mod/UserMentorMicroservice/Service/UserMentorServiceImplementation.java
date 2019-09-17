@@ -14,7 +14,21 @@ public class UserMentorServiceImplementation implements UserMentorServiceInterfa
 	
 	@Override
 	public UserMentorModel saveproposal(UserMentorModel userMentorData) {
-		return userMentorDao.save(userMentorData);
+		if(userMentorDao.findByUserIdAndMentorIdAndSkillId(userMentorData.getUserId(), userMentorData.getMentorId()
+				, userMentorData.getSkillId())==null)
+			return userMentorDao.save(userMentorData);
+		else
+			return null;
+	}
+
+	@Override
+	public UserMentorModel getUserConnection(Long uId) {
+		return userMentorDao.findByUserId(uId);
+	}
+
+	@Override
+	public UserMentorModel getMentorConnection(Long mId) {
+		return userMentorDao.findByMentorId(mId);
 	}
 
 }

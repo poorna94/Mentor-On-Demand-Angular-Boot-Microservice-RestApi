@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.persistence.Id;
 
 
@@ -16,22 +17,19 @@ public class UserMentorModel {
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private Long Id;
 	
-	@NotBlank
+	@NotNull
 	private Long userId;
 	
-	@NotBlank
+	@NotNull
 	private Long mentorId;
 	
-	@NotBlank
+	@NotNull
 	private Long skillId;
-
-	@NotBlank
+	
 	private boolean userProposal;
 	
-	@NotBlank
 	private boolean mentorProposal;
 	
-	@NotBlank
 	private boolean userReconfirmProposal;
 	
 	private double userRating;
@@ -128,7 +126,7 @@ public class UserMentorModel {
 				+ ", feedback=" + feedback + "]";
 	}
 
-	public UserMentorModel(Long id, @NotBlank Long userId, @NotBlank Long mentorId, @NotBlank Long skillId,
+	public UserMentorModel(Long id, @NotBlank Long userId, @NotNull Long mentorId, @NotNull Long skillId,
 			 boolean userProposal, boolean mentorProposal, boolean userReconfirmProposal,
 			 double userRating, int userProgress, String feedback) {
 		super();

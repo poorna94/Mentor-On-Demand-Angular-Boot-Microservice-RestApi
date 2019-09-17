@@ -8,7 +8,7 @@ export class UserMentorConfigService {
   private API_URL = "http://localhost:8004/exchange";
 
   getProposalByStudentSaved_URL():string{
-    return (this.API_URL+"/add")
+    return (this.API_URL+"/add");
   }
   constructor() { }
 }
