@@ -27,17 +27,27 @@ export class MentorConnectionComponent implements OnInit {
         .subscribe((data)=>{
           console.log("getting user by Mentor connections");
           this.mentorByUserData = data;
+          this.getMentorByConnectionList();
         },()=>{
           console.log("Cannot get connections for user");
         })
   }
 
-  getMentorByConnectionList(connectionList:MentorModel){
-     let mentorIdArray: Array<number>;
+  getMentorByConnectionList(){
+     let mentorIdArray: Array<number> = [];
+     console.log(this.mentorByUserData);
      for(var i =0;i< this.mentorByUserData.length;i++){
         mentorIdArray.push(this.mentorByUserData[i].mentorId);
      }
-     this
+     console.log(mentorIdArray);
+     this.mentorService.getMentorByUserConnection(mentorIdArray)
+       .subscribe((data)=>{
+          this.mentorArray = data;
+          console.log(this.mentorArray);
+          console.log("got mentor list by user connections");
+       },(error)=>{
+          console.log("cannot get user connection for mentors and mentor list");
+       });
   }
 }
 

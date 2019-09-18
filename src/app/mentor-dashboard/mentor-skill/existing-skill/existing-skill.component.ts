@@ -7,7 +7,7 @@ import {SkillModel} from "../../../serviceModule/SkillModule/Skill.Model";
   styleUrls: ['./existing-skill.component.css']
 })
 export class ExistingSkillComponent implements OnInit {
-  @Input() mentorSkillList:SkillModel[];
+  @Input() mentorSkillData:SkillModel;
   constructor() { }
 
   ngOnInit() {

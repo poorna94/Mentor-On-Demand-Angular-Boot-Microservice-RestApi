@@ -1,5 +1,7 @@
 package com.mod.SkillsMicroservice.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.mod.SkillsMicroservice.Dao.SkillsDaoInterface;
@@ -17,7 +19,7 @@ public class SkillsServiceImplementation implements SkillsServiceInteferface{
 	}
 
 	@Override
-	public SkillsModel getMentorSkills(Long id) {
+	public List<SkillsModel> getMentorSkills(Long id) {
 		return skillDao.findByMentorId(id);
 	}
 

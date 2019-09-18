@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {observable} from "rxjs";
 import {SkillModel} from "../../serviceModule/SkillModule/Skill.Model";
 import {SkillServiceService} from "../../serviceModule/SkillModule/skill-service.service";
+import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-mentor-skill',
@@ -10,7 +12,9 @@ import {SkillServiceService} from "../../serviceModule/SkillModule/skill-service
 })
 export class MentorSkillComponent implements OnInit {
   mentorSkillList: SkillModel[];
-  constructor(private skillService:SkillServiceService) { }
+
+  constructor(private skillService:SkillServiceService,
+              private routes:Router) { }
 
   ngOnInit() {
     this.getSkillList();
@@ -19,7 +23,8 @@ export class MentorSkillComponent implements OnInit {
     this.skillService.getSkillMentorwise()
       .subscribe((data)=>{
         // @ts-ignore
-        this.mentorSkillList = JSON.parse(data);
+        this.mentorSkillList = data;
+        this.routes.navigate(['skills'])
       },(error)=>{
         console.log("No skill found")
       });

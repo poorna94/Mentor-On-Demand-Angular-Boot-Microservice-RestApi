@@ -8,7 +8,6 @@
       <tr>
         <th>#</th>
         <th>Mentor Name</th>
-        <th>Skill Name</th>
         <th>Mentor Experience</th>
         <th>Mentor Email</th>
         <th>Connection Status</th>
@@ -18,26 +17,19 @@
       </thead>
       <!--Table head-->
       <!--Table body-->
-      <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Mark</td>
-        <td><button class="btn success">Accept</button>&nbsp;&nbsp; <button class="btn danger">Delete</button></td>
-      </tr>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>Mark</td>
-        <td>Mark</td>
-        <td><button class="btn success">Accept</button>&nbsp;&nbsp; <button class="btn danger">Delete</button></td>
-      </tr>
 
+      <tbody>
+      <tr *ngFor="let item of mentorArray; index as i" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{item.mentorName}}</td>
+        <td>{{item.mentorExperience}}</td>
+        <td>{{item.mentorEmail}}</td>
+        <td *ngIf="mentorByUserData[i].mentorProposal; else other">Mentor Accepted</td>
+        <ng-template #other>
+          <td>On Hold</td>
+        </ng-template>
+        <td><button class="btn success" [disabled]="!mentorByUserData[i].mentorProposal">Accept</button>&nbsp;&nbsp; <button class="btn danger">Delete</button></td>
+      </tr>
       </tbody>
       <!--Table body-->
     </table>

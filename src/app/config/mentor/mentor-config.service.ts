@@ -21,5 +21,9 @@ export class MentorConfigService {
   getMentorLogIn_API_URL():string{
     return (this.API_URL+"/login");
   }
+
+  getMentorByUserConnection_URL():string{
+    return (this.API_URL+"/mentorConnectionByUser");
+  }
   constructor() { }
 }

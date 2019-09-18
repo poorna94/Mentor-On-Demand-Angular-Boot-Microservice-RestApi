@@ -1,5 +1,6 @@
 package com.mod.SkillsMicroservice.Controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +35,10 @@ public class SkillsController {
 		return new ResponseEntity<SkillsModel>(skillServiceInterface.saveSkill(skilldata),HttpStatus.OK);
 	}
 	
-	@GetMapping("/mentorSkill/:id")
-	public ResponseEntity<SkillsModel> allMentorSkill(@PathVariable Long id){
+	@GetMapping("/mentorSkill/{id}")
+	public ResponseEntity<List<SkillsModel>> allMentorSkill(@PathVariable Long id){
 		System.out.println("Skill : "+id);
-		return new ResponseEntity<SkillsModel>(skillServiceInterface.getMentorSkills(id),HttpStatus.OK);
+		return new ResponseEntity<List<SkillsModel>>(skillServiceInterface.getMentorSkills(id),HttpStatus.OK);
 	}
 	
 }

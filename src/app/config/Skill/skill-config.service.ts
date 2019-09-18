@@ -11,7 +11,7 @@ export class SkillConfigService {
   }
 
   getMentorSkill_URL():string{
-    return (this.API_URL+"/mentorSkill/");
+    return (this.API_URL+"/mentorSkill");
   }
 
 

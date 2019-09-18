@@ -27,6 +27,6 @@ export class MentorService {
   }
 
   getMentorByUserConnection(mentorIdArray:number[]):Observable<MentorModel[]>{
-    return this.http.post(this)
+    return this.http.post<MentorModel[]>(this.mentorConfig.getMentorByUserConnection_URL(),mentorIdArray);
   }
 }

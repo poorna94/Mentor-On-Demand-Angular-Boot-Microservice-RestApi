@@ -1,12 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-7">
-      <app-search-bar></app-search-bar>
-      <hr>
+    <div class="col-md-5">
       <app-new-skill></app-new-skill>
     </div>
-    <div class="col-md-5">
-      <app-existing-skill [mentorSkillList]="mentorSkillList"></app-existing-skill>
+    <div class="col-md-7">
+      <app-existing-skill *ngFor="let skillData of mentorSkillList" [mentorSkillData]="skillData"></app-existing-skill>
     </div>
   </div>
 </div>

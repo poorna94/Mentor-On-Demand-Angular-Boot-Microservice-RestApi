@@ -31,8 +31,7 @@ export class SkillServiceService {
   getSkillMentorwise():Observable<SkillModel>{
     // @ts-ignore
     console.log("getting skills of mentor");
-    const URL = (this.skillConfig.getMentorSkill_URL()+`${this.MentorLoggedIn.mentorId}`);
     // @ts-ignore
-    return this.http.get<SkillModel>(URL,httpHeader).pipe(map(this.extractData));
+    return this.http.get<SkillModel>((this.skillConfig.getMentorSkill_URL()+`/${this.MentorLoggedIn.mentorId}`));
   }
 }
